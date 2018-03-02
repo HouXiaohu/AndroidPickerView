@@ -1,0 +1,66 @@
+ext {
+    android = [
+            compileSdkVersion   : 25,
+            buildToolsVersion   : "25.0.2",
+            minSdkVersion       : 19,
+            targetSdkVersion    : 25,
+            versionCode         : 4,
+            versionName         : "1.1.3",
+            supportSdk          : "25.3.1",
+
+    ]
+
+    //region 库需要的依赖
+    requiredDependencies = [
+            // 基础
+            "appcompat_v7"          : "com.android.support:appcompat-v7:${android["supportSdk"]}",
+            "support_v4"            : "com.android.support:appcompat-v4:${android["supportSdk"]}",
+            "design"                : "com.android.support:design:${android["supportSdk"]}",
+            "recyclerview_v7"       : "com.android.support:recyclerview-v7:${android["supportSdk"]}",
+
+
+
+    ]
+    //endregion
+
+    //region 不需要
+//    annotationCompiler= [
+//            "butterknife-compiler"  : "com.jakewharton:butterknife-compiler:${android["butterknife"]}",
+//            "arouter-compiler":"com.alibaba:arouter-compiler:${android["arouter_compiler"]}",
+//            "apifactory-compile":":basic_component_compile"
+//    ]
+
+
+//    dependencies = [
+//            "constraintlayout"      : "com.android.support.constraint:constraint-layout:${android["constraintlayout"]}",
+//            "preference-v14"        : "com.android.support:preference-v14:${android["supportSdk"]}",
+//            "customtabs"            : "com.android.support:customtabs:${android["supportSdk"]}",
+//            "palette-v7"            : "com.android.support:palette-v7:${android["supportSdk"]}",
+//            "percent"               : "com.android.support:percent:${android["supportSdk"]}",
+//
+//            "sublimepickerlibrary"  : "com.appeaser.sublimepickerlibrary:sublimepickerlibrary:${android["sublimepickerlibrary"]}",
+//
+//            "arecyclerview"         : "com.github.limedroid:ARecyclerView:v1.1.5",
+//
+//            "utils"                 : "com.blankj:utilcode:${android["utils"]}",
+//
+//
+//
+//            "navigationtabstrip"    : "com.github.devlight.navigationtabstrip:navigationtabstrip:${android["navigationtabstrip"]}",
+//
+//            "greendao"              : "org.greenrobot:greendao:${android["greendao"]}",
+//
+//            "multidex"              : "com.android.support:multidex:${android["multidexVersion"]}",
+//
+//            "bugly_sdk"             : "com.tencent.bugly:crashreport:${android["bugly_sdkVersion"]}",
+//            "bugly_ndk"             : "com.tencent.bugly:nativecrashreport:${android["bugly_ndkVersion"]}",
+//            "pager_bottom_tab_strip": "me.majiajie:pager-bottom-tab-strip:${android["pager_tab_strip"]}",
+//            "citypicker"            : "liji.library.dev:citypickerview:${android["citypicker"]}",
+//
+//
+//
+//            "pagerslidingtabstrip"  : "com.astuetz:pagerslidingtabstrip:${android["pagerslidingtabstrip"]}",
+//
+//    ]
+    //endregion
+}

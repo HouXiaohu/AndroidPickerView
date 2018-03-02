@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.hxh.component.citypickerview.MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ONE"
+        android:onClick="one"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ONE_TWO"
+        android:onClick="one_two"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ONE_TWO_THREE"
+        android:onClick="one_two_three"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义数据"
+        android:onClick="settingdata"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义数据，并且保存之前的"
+        android:onClick="settingdata1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:id="@+id/tv1"
+        android:textColor="#000000"
+        />
+
+
+</LinearLayout>

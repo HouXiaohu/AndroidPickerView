@@ -1,0 +1,49 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_title_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#E9E9E9"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/layout_picker_headview"
+        android:id="@+id/rl_head"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.hxh.component.common.whellview.WheelView
+            android:id="@+id/id_province"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        </com.hxh.component.common.whellview.WheelView>
+
+        <com.hxh.component.common.whellview.WheelView
+            android:id="@+id/id_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        </com.hxh.component.common.whellview.WheelView>
+
+        <com.hxh.component.common.whellview.WheelView
+            android:id="@+id/id_district"
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        </com.hxh.component.common.whellview.WheelView>
+    </LinearLayout>
+</LinearLayout>
+
+
