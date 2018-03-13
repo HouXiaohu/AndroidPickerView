@@ -23,7 +23,7 @@ import java.util.List;
  * The simple Array wheel adapter
  * @param <T> the element type
  */
-public class ArrayWheelAdapter<T> extends AbstractWheelTextAdapter {
+public class SimpleArraySimpleWheelAdapterSimpleSimple<T> extends SimpleSimpleAbstractSimpleWheelTextAdapter {
     
     // items
     private List<T> items;
@@ -33,7 +33,7 @@ public class ArrayWheelAdapter<T> extends AbstractWheelTextAdapter {
      * @param context the current context
      * @param items the items
      */
-    public ArrayWheelAdapter(Context context, List<T> items) {
+    public SimpleArraySimpleWheelAdapterSimpleSimple(Context context, List<T> items) {
         super(context);
         
         //setEmptyItemResource(TEXT_VIEW_ITEM_RESOURCE);

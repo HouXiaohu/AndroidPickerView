@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * Recycle stores wheel items to reuse. 
  */
-public class WheelRecycle {
+public class SimpleWheelRecycle {
 	// Cached items
 	private List<View> items;
 	
@@ -36,13 +36,13 @@ public class WheelRecycle {
 	private List<View> emptyItems;
 	
 	// Wheel view
-	private WheelView wheel;
+	private SimpleWheelView wheel;
 	
 	/**
 	 * Constructor
 	 * @param wheel the wheel view
 	 */
-	public WheelRecycle(WheelView wheel) {
+	public SimpleWheelRecycle(SimpleWheelView wheel) {
 		this.wheel = wheel;
 	}
 
@@ -56,7 +56,7 @@ public class WheelRecycle {
 	 * @param range the range of current wheel items 
 	 * @return the new value of first item number
 	 */
-	public int recycleItems(LinearLayout layout, int firstItem, ItemsRange range) {
+	public int recycleItems(LinearLayout layout, int firstItem, SimpleItemsRange range) {
 		int index = firstItem;
 		for (int i = 0; i < layout.getChildCount();) {
 			if (!range.contains(index)) {

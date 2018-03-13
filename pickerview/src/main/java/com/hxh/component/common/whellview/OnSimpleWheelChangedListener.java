@@ -1,5 +1,5 @@
 /*
- *  Copyright 2010 Yuri Kanivets
+ *  Copyright 2011 Yuri Kanivets
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -17,30 +17,17 @@
 package com.hxh.component.common.whellview;
 
 /**
- * Wheel adapter interface
- * 
- * @deprecated Use WheelViewAdapter
+ * Wheel changed listener interface.
+ * <p>The onChanged() method is called whenever current wheel positions is changed:
+ * <li> New Wheel position is set
+ * <li> Wheel view is scrolled
  */
-public interface WheelAdapter {
+public interface OnSimpleWheelChangedListener {
 	/**
-	 * Gets items count
-	 * @return the count of wheel items
+	 * Callback method to be invoked when current item changed
+	 * @param wheel the wheel view whose state has changed
+	 * @param oldValue the old value of current item
+	 * @param newValue the new value of current item
 	 */
-	public int getItemsCount();
-	
-	/**
-	 * Gets a wheel item by index.
-	 * 
-	 * @param index the item index
-	 * @return the wheel item text or null
-	 */
-	public String getItem(int index);
-	
-	/**
-	 * Gets maximum item length. It is used to determine the wheel width. 
-	 * If -1 is returned there will be used the default wheel width.
-	 * 
-	 * @return the maximum item length or -1
-	 */
-	public int getMaximumLength();
+	  void onChanged(SimpleWheelView wheel, int oldValue, int newValue);
 }

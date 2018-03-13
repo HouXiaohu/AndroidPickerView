@@ -31,7 +31,7 @@ import android.widget.Scroller;
 /**
  * Scroller class handles scrolling events and updates the 
  */
-public class WheelScroller {
+public class SimpleWheelScroller {
     /**
      * Scrolling listener interface
      */
@@ -82,7 +82,7 @@ public class WheelScroller {
      * @param context the current context
      * @param listener the scrolling listener
      */
-    public WheelScroller(Context context, ScrollingListener listener) {
+    public SimpleWheelScroller(Context context, ScrollingListener listener) {
         gestureDetector = new GestureDetector(context, gestureListener);
         gestureDetector.setIsLongpressEnabled(false);
         

@@ -18,9 +18,9 @@ import com.hxh.component.common.listener.OnPickViewListener;
 import com.hxh.component.common.model.OneLevel_Bean;
 import com.hxh.component.common.model.ThreeLevel_Bean;
 import com.hxh.component.common.model.TwoLevel_Bean;
-import com.hxh.component.common.whellview.OnWheelChangedListener;
-import com.hxh.component.common.whellview.WheelView;
-import com.hxh.component.common.whellview.adapters.ArrayWheelAdapter;
+import com.hxh.component.common.whellview.OnSimpleWheelChangedListener;
+import com.hxh.component.common.whellview.SimpleWheelView;
+import com.hxh.component.common.whellview.adapters.SimpleArraySimpleWheelAdapterSimpleSimple;
 import com.hxh.component.pickerview.R;
 import com.hxh.component.pickerview.ui.picker.common.PickerShowType;
 import com.hxh.component.pickerview.ui.picker.widget.CanShow;
@@ -38,7 +38,7 @@ import java.util.List;
  * 作者：liji on 2015/12/17 10:40
  * 邮箱：lijiwork@sina.com
  */
-public class PickerView implements CanShow, OnWheelChangedListener {
+public class PickerView implements CanShow, OnSimpleWheelChangedListener {
 
     private PickerView() {
     }
@@ -47,9 +47,9 @@ public class PickerView implements CanShow, OnWheelChangedListener {
     private String TAG = "pickerview";
     private PopupWindow popwindow;
     private View popview;
-    private WheelView mViewProvince;
-    private WheelView mViewCity;
-    private WheelView mViewDistrict;
+    private SimpleWheelView mViewProvince;
+    private SimpleWheelView mViewCity;
+    private SimpleWheelView mViewDistrict;
     private RelativeLayout mRelativeTitleBg;
     private LinearLayout mLinearLayout_main;
     private TextView mTvOK;
@@ -126,9 +126,9 @@ public class PickerView implements CanShow, OnWheelChangedListener {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         popview = layoutInflater.inflate(R.layout.layout_mypicker_view, null);
         mLinearLayout_main = (LinearLayout) popview.findViewById(R.id.ll_title);
-        mViewProvince = (WheelView) popview.findViewById(R.id.id_province);
-        mViewCity = (WheelView) popview.findViewById(R.id.id_city);
-        mViewDistrict = (WheelView) popview.findViewById(R.id.id_district);
+        mViewProvince = (SimpleWheelView) popview.findViewById(R.id.id_province);
+        mViewCity = (SimpleWheelView) popview.findViewById(R.id.id_city);
+        mViewDistrict = (SimpleWheelView) popview.findViewById(R.id.id_district);
 
         if(mBuildConfig.mStyle.isShowParcelLine())
         {
@@ -399,7 +399,7 @@ public class PickerView implements CanShow, OnWheelChangedListener {
             }
         }
 
-        ArrayWheelAdapter arrayWheelAdapter = new ArrayWheelAdapter<OneLevel_Bean>(context, parseHelper.getmOnes());
+        SimpleArraySimpleWheelAdapterSimpleSimple arrayWheelAdapter = new SimpleArraySimpleWheelAdapterSimpleSimple<OneLevel_Bean>(context, parseHelper.getmOnes());
         mViewProvince.setViewAdapter(arrayWheelAdapter);
 
         //自定义item
@@ -485,7 +485,7 @@ public class PickerView implements CanShow, OnWheelChangedListener {
             }
         }
 
-        ArrayWheelAdapter cityWheel = new ArrayWheelAdapter<TwoLevel_Bean>(context, cities);
+        SimpleArraySimpleWheelAdapterSimpleSimple cityWheel = new SimpleArraySimpleWheelAdapterSimpleSimple<TwoLevel_Bean>(context, cities);
 
         //自定义item
         if (mBuildConfig.mStyle.getmItemLayoutResoureId() != -1 && mBuildConfig.mStyle.getmItemLayoutTextViewResourceId() != -1) {
@@ -537,7 +537,7 @@ public class PickerView implements CanShow, OnWheelChangedListener {
             }
         }
 
-        ArrayWheelAdapter districtWheel = new ArrayWheelAdapter<ThreeLevel_Bean>(context, areas);
+        SimpleArraySimpleWheelAdapterSimpleSimple districtWheel = new SimpleArraySimpleWheelAdapterSimpleSimple<ThreeLevel_Bean>(context, areas);
 
         //自定义item
         if (mBuildConfig.mStyle.getmItemLayoutResoureId() != -1
@@ -578,7 +578,7 @@ public class PickerView implements CanShow, OnWheelChangedListener {
     }
 
     @Override
-    public void onChanged(WheelView wheel, int oldValue, int newValue) {
+    public void onChanged(SimpleWheelView wheel, int oldValue, int newValue) {
         if (wheel == mViewProvince) {
             updateCities();
         } else if (wheel == mViewCity) {

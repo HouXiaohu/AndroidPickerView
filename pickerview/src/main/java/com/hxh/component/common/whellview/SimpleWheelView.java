@@ -34,7 +34,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
 
-import com.hxh.component.common.whellview.adapters.WheelViewAdapter;
+import com.hxh.component.common.whellview.adapters.SimpleWheelViewAdapter;
 import com.hxh.component.pickerview.R;
 
 import java.util.LinkedList;
@@ -45,7 +45,7 @@ import java.util.List;
  *
  * @author Yuri Kanivets
  */
-public class WheelView extends View {
+public class SimpleWheelView extends View {
     
     /**
      * 滚轮从上到下背景逐渐变淡，到中间，逆反改变
@@ -93,7 +93,7 @@ public class WheelView extends View {
     private boolean drawShadows = true;
     
     // Scrolling
-    private WheelScroller scroller;
+    private SimpleWheelScroller scroller;
     
     private boolean isScrollingPerformed;
     
@@ -111,17 +111,17 @@ public class WheelView extends View {
     private int firstItem;
     
     // View adapter
-    private WheelViewAdapter viewAdapter;
+    private SimpleWheelViewAdapter viewAdapter;
     
     // Recycle
-    private WheelRecycle recycle = new WheelRecycle(this);
+    private SimpleWheelRecycle recycle = new SimpleWheelRecycle(this);
     
     // Listeners
-    private List<OnWheelChangedListener> changingListeners = new LinkedList<OnWheelChangedListener>();
+    private List<OnSimpleWheelChangedListener> changingListeners = new LinkedList<OnSimpleWheelChangedListener>();
     
-    private List<OnWheelScrollListener> scrollingListeners = new LinkedList<OnWheelScrollListener>();
+    private List<OnSimpleWheelScrollListener> scrollingListeners = new LinkedList<OnSimpleWheelScrollListener>();
     
-    private List<OnWheelClickedListener> clickingListeners = new LinkedList<OnWheelClickedListener>();
+    private List<OnSimpleWheelClickedListener> clickingListeners = new LinkedList<OnSimpleWheelClickedListener>();
     
     /**
      * 中间线的颜色
@@ -136,7 +136,7 @@ public class WheelView extends View {
     /**
      * Constructor
      */
-    public WheelView(Context context, AttributeSet attrs, int defStyle) {
+    public SimpleWheelView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initData(context);
     }
@@ -144,7 +144,7 @@ public class WheelView extends View {
     /**
      * Constructor
      */
-    public WheelView(Context context, AttributeSet attrs) {
+    public SimpleWheelView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initData(context);
     }
@@ -152,7 +152,7 @@ public class WheelView extends View {
     /**
      * Constructor
      */
-    public WheelView(Context context) {
+    public SimpleWheelView(Context context) {
         super(context);
         initData(context);
     }
@@ -163,11 +163,11 @@ public class WheelView extends View {
      * @param context the context
      */
     private void initData(Context context) {
-        scroller = new WheelScroller(getContext(), scrollingListener);
+        scroller = new SimpleWheelScroller(getContext(), scrollingListener);
     }
     
     // Scrolling listener
-    WheelScroller.ScrollingListener scrollingListener = new WheelScroller.ScrollingListener() {
+    SimpleWheelScroller.ScrollingListener scrollingListener = new SimpleWheelScroller.ScrollingListener() {
         @Override
         public void onStarted() {
             isScrollingPerformed = true;
@@ -202,7 +202,7 @@ public class WheelView extends View {
         
         @Override
         public void onJustify() {
-            if (Math.abs(scrollingOffset) > WheelScroller.MIN_DELTA_FOR_SCROLLING) {
+            if (Math.abs(scrollingOffset) > SimpleWheelScroller.MIN_DELTA_FOR_SCROLLING) {
                 scroller.scroll(scrollingOffset, 0);
             }
         }
@@ -258,7 +258,7 @@ public class WheelView extends View {
      *
      * @return the view adapter
      */
-    public WheelViewAdapter getViewAdapter() {
+    public SimpleWheelViewAdapter getViewAdapter() {
         return viewAdapter;
     }
     
@@ -281,7 +281,7 @@ public class WheelView extends View {
      *
      * @param viewAdapter the view adapter
      */
-    public void setViewAdapter(WheelViewAdapter viewAdapter) {
+    public void setViewAdapter(SimpleWheelViewAdapter viewAdapter) {
         if (this.viewAdapter != null) {
             this.viewAdapter.unregisterDataSetObserver(dataObserver);
         }
@@ -298,7 +298,7 @@ public class WheelView extends View {
      *
      * @param listener the listener
      */
-    public void addChangingListener(OnWheelChangedListener listener) {
+    public void addChangingListener(OnSimpleWheelChangedListener listener) {
         changingListeners.add(listener);
     }
     
@@ -307,7 +307,7 @@ public class WheelView extends View {
      *
      * @param listener the listener
      */
-    public void removeChangingListener(OnWheelChangedListener listener) {
+    public void removeChangingListener(OnSimpleWheelChangedListener listener) {
         changingListeners.remove(listener);
     }
     
@@ -318,7 +318,7 @@ public class WheelView extends View {
      * @param newValue the new wheel value
      */
     protected void notifyChangingListeners(int oldValue, int newValue) {
-        for (OnWheelChangedListener listener : changingListeners) {
+        for (OnSimpleWheelChangedListener listener : changingListeners) {
             listener.onChanged(this, oldValue, newValue);
         }
     }
@@ -328,7 +328,7 @@ public class WheelView extends View {
      *
      * @param listener the listener
      */
-    public void addScrollingListener(OnWheelScrollListener listener) {
+    public void addScrollingListener(OnSimpleWheelScrollListener listener) {
         scrollingListeners.add(listener);
     }
     
@@ -337,7 +337,7 @@ public class WheelView extends View {
      *
      * @param listener the listener
      */
-    public void removeScrollingListener(OnWheelScrollListener listener) {
+    public void removeScrollingListener(OnSimpleWheelScrollListener listener) {
         scrollingListeners.remove(listener);
     }
     
@@ -345,7 +345,7 @@ public class WheelView extends View {
      * Notifies listeners about starting scrolling
      */
     protected void notifyScrollingListenersAboutStart() {
-        for (OnWheelScrollListener listener : scrollingListeners) {
+        for (OnSimpleWheelScrollListener listener : scrollingListeners) {
             listener.onScrollingStarted(this);
         }
     }
@@ -354,7 +354,7 @@ public class WheelView extends View {
      * Notifies listeners about ending scrolling
      */
     protected void notifyScrollingListenersAboutEnd() {
-        for (OnWheelScrollListener listener : scrollingListeners) {
+        for (OnSimpleWheelScrollListener listener : scrollingListeners) {
             listener.onScrollingFinished(this);
         }
     }
@@ -364,7 +364,7 @@ public class WheelView extends View {
      *
      * @param listener the listener
      */
-    public void addClickingListener(OnWheelClickedListener listener) {
+    public void addClickingListener(OnSimpleWheelClickedListener listener) {
         clickingListeners.add(listener);
     }
     
@@ -373,7 +373,7 @@ public class WheelView extends View {
      *
      * @param listener the listener
      */
-    public void removeClickingListener(OnWheelClickedListener listener) {
+    public void removeClickingListener(OnSimpleWheelClickedListener listener) {
         clickingListeners.remove(listener);
     }
     
@@ -381,7 +381,7 @@ public class WheelView extends View {
      * Notifies listeners about clicking
      */
     protected void notifyClickListenersAboutClick(int item) {
-        for (OnWheelClickedListener listener : clickingListeners) {
+        for (OnSimpleWheelClickedListener listener : clickingListeners) {
             listener.onItemClicked(this, item);
         }
     }
@@ -534,7 +534,7 @@ public class WheelView extends View {
         }
         else if (itemsLayout != null) {
             // cache all items
-            recycle.recycleItems(itemsLayout, firstItem, new ItemsRange());
+            recycle.recycleItems(itemsLayout, firstItem, new SimpleItemsRange());
         }
         
         invalidate();
@@ -887,7 +887,7 @@ public class WheelView extends View {
      *
      * @return the items range
      */
-    private ItemsRange getItemsRange() {
+    private SimpleItemsRange getItemsRange() {
         if (getItemHeight() == 0) {
             return null;
         }
@@ -911,7 +911,7 @@ public class WheelView extends View {
             first -= emptyItems;
             count += Math.asin(emptyItems);
         }
-        return new ItemsRange(first, count);
+        return new SimpleItemsRange(first, count);
     }
     
     /**
@@ -921,7 +921,7 @@ public class WheelView extends View {
      */
     private boolean rebuildItems() {
         boolean updated = false;
-        ItemsRange range = getItemsRange();
+        SimpleItemsRange range = getItemsRange();
         if (itemsLayout != null) {
             int first = recycle.recycleItems(itemsLayout, firstItem, range);
             updated = firstItem != first;
@@ -985,7 +985,7 @@ public class WheelView extends View {
     private void buildViewForMeasuring() {
         // clear all items
         if (itemsLayout != null) {
-            recycle.recycleItems(itemsLayout, firstItem, new ItemsRange());
+            recycle.recycleItems(itemsLayout, firstItem, new SimpleItemsRange());
         }
         else {
             createItemsLayout();

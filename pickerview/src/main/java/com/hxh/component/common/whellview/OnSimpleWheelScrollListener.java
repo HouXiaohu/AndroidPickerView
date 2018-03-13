@@ -19,16 +19,16 @@ package com.hxh.component.common.whellview;
 /**
  * Wheel scrolled listener interface.
  */
-public interface OnWheelScrollListener {
+public interface OnSimpleWheelScrollListener {
 	/**
 	 * Callback method to be invoked when scrolling started.
 	 * @param wheel the wheel view whose state has changed.
 	 */
-	void onScrollingStarted(WheelView wheel);
+	void onScrollingStarted(SimpleWheelView wheel);
 	
 	/**
 	 * Callback method to be invoked when scrolling ended.
 	 * @param wheel the wheel view whose state has changed.
 	 */
-	void onScrollingFinished(WheelView wheel);
+	void onScrollingFinished(SimpleWheelView wheel);
 }

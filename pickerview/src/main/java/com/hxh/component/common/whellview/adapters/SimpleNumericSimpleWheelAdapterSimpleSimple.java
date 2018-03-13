@@ -21,7 +21,7 @@ import android.content.Context;
 /**
  * Numeric Wheel adapter.
  */
-public class NumericWheelAdapter extends AbstractWheelTextAdapter {
+public class SimpleNumericSimpleWheelAdapterSimpleSimple extends SimpleSimpleAbstractSimpleWheelTextAdapter {
     
     /** The default min value */
     public static final int DEFAULT_MAX_VALUE = 9;
@@ -40,7 +40,7 @@ public class NumericWheelAdapter extends AbstractWheelTextAdapter {
      * Constructor
      * @param context the current context
      */
-    public NumericWheelAdapter(Context context) {
+    public SimpleNumericSimpleWheelAdapterSimpleSimple(Context context) {
         this(context, DEFAULT_MIN_VALUE, DEFAULT_MAX_VALUE);
     }
 
@@ -50,7 +50,7 @@ public class NumericWheelAdapter extends AbstractWheelTextAdapter {
      * @param minValue the wheel min value
      * @param maxValue the wheel max value
      */
-    public NumericWheelAdapter(Context context, int minValue, int maxValue) {
+    public SimpleNumericSimpleWheelAdapterSimpleSimple(Context context, int minValue, int maxValue) {
         this(context, minValue, maxValue, null);
     }
 
@@ -61,7 +61,7 @@ public class NumericWheelAdapter extends AbstractWheelTextAdapter {
      * @param maxValue the wheel max value
      * @param format the format string
      */
-    public NumericWheelAdapter(Context context, int minValue, int maxValue, String format) {
+    public SimpleNumericSimpleWheelAdapterSimpleSimple(Context context, int minValue, int maxValue, String format) {
         super(context);
         
         this.minValue = minValue;

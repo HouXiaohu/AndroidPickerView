@@ -18,7 +18,7 @@ package com.hxh.component.common.whellview.adapters;
 
 import android.content.Context;
 
-import com.hxh.component.common.whellview.WheelAdapter;
+import com.hxh.component.common.whellview.SimpleWheelAdapter;
 
 
 /**
@@ -26,17 +26,17 @@ import com.hxh.component.common.whellview.WheelAdapter;
  * 
  * @deprecated Will be removed soon
  */
-public class AdapterWheel extends AbstractWheelTextAdapter {
+public class SimpleAdapterSimpleWheelSimpleSimple extends SimpleSimpleAbstractSimpleWheelTextAdapter {
 
     // Source adapter
-    private WheelAdapter adapter;
+    private SimpleWheelAdapter adapter;
     
     /**
      * Constructor
      * @param context the current context
      * @param adapter the source adapter
      */
-    public AdapterWheel(Context context, WheelAdapter adapter) {
+    public SimpleAdapterSimpleWheelSimpleSimple(Context context, SimpleWheelAdapter adapter) {
         super(context);
         
         this.adapter = adapter;
@@ -46,7 +46,7 @@ public class AdapterWheel extends AbstractWheelTextAdapter {
      * Gets original adapter
      * @return the original adapter
      */
-    public WheelAdapter getAdapter() {
+    public SimpleWheelAdapter getAdapter() {
         return adapter;
     }
     

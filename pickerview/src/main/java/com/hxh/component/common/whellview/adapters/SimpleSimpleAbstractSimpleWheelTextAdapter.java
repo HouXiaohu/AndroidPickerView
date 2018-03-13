@@ -27,7 +27,7 @@ import android.widget.TextView;
 /**
  * Abstract wheel adapter provides common functionality for adapters.
  */
-public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
+public abstract class SimpleSimpleAbstractSimpleWheelTextAdapter extends SimpleAbstractSimpleWheelAdapter {
     
     /** Text view resource. Used as a default view for adapter. */
     public static final int TEXT_VIEW_ITEM_RESOURCE = -1;
@@ -69,7 +69,7 @@ public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
      * Constructor
      * @param context the current context
      */
-    protected AbstractWheelTextAdapter(Context context) {
+    protected SimpleSimpleAbstractSimpleWheelTextAdapter(Context context) {
         this(context, TEXT_VIEW_ITEM_RESOURCE);
     }
     
@@ -78,7 +78,7 @@ public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
      * @param context the current context
      * @param itemResource the resource ID for a layout file containing a TextView to use when instantiating items views
      */
-    protected AbstractWheelTextAdapter(Context context, int itemResource) {
+    protected SimpleSimpleAbstractSimpleWheelTextAdapter(Context context, int itemResource) {
         this(context, itemResource, NO_RESOURCE);
     }
     
@@ -88,7 +88,7 @@ public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
      * @param itemResource the resource ID for a layout file containing a TextView to use when instantiating items views
      * @param itemTextResource the resource ID for a text view in the item layout
      */
-    protected AbstractWheelTextAdapter(Context context, int itemResource, int itemTextResource) {
+    protected SimpleSimpleAbstractSimpleWheelTextAdapter(Context context, int itemResource, int itemTextResource) {
         this.context = context;
         itemResourceId = itemResource;
         itemTextResourceId = itemTextResource;

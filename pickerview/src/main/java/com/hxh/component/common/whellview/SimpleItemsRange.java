@@ -22,7 +22,7 @@ package com.hxh.component.common.whellview;
 /**
  * Range for visible items.
  */
-public class ItemsRange {
+public class SimpleItemsRange {
 	// First item number
 	private int first;
 	
@@ -32,7 +32,7 @@ public class ItemsRange {
 	/**
 	 * Default constructor. Creates an empty range
 	 */
-    public ItemsRange() {
+    public SimpleItemsRange() {
         this(0, 0);
     }
     
@@ -41,7 +41,7 @@ public class ItemsRange {
 	 * @param first the number of first item
 	 * @param count the count of items
 	 */
-	public ItemsRange(int first, int count) {
+	public SimpleItemsRange(int first, int count) {
 		this.first = first;
 		this.count = count;
 	}
